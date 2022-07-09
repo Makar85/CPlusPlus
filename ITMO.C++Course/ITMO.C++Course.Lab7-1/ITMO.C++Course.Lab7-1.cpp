@@ -7,8 +7,8 @@ using namespace std;
 
 struct Time {
     int hours;
-    int minutes = rand() % 60;
-    int seconds = rand() % 60;
+    int minutes;
+    int seconds;
     // перевод времени в секунды
     int totalSec() {
         int ts = (hours * 3600) + (minutes * 60) + seconds;
