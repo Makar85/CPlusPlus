@@ -2,11 +2,13 @@
 #pragma once /* Защита от двойного подключения заголовочного файла */
 #include <windows.h>
 #include <string>
+#include "IdCard.h"
 using namespace std;
 
 class Student
 {
 public:
+	
 	class ExScore //класс исключений
 	{
 	public:
@@ -19,7 +21,7 @@ public:
 		}
 	};
 	// Конструктор класса Student
-	Student(string, string);
+	Student(string, string, IdCard*);
 	// Деструктор класса Student
 	~Student();
 	// Установка имени студента
@@ -38,7 +40,13 @@ public:
 	double get_average_score();
 	// Запись данных о студенте в файл
 	void save();
+
+	void setIdCard(IdCard* c);
+
+	IdCard getIdCard();
 private:
+
+	IdCard* iCard;
 	// Промежуточные оценки
 	int scores[5];
 	// Средний балл

@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{7e4e99d1-df62-4944-b982-29100c667611}</ProjectGuid>
-    <RootNamespace>ITMOCCourseEx8</RootNamespace>
+    <ProjectGuid>{a14d0e73-664a-427e-9966-76bfd5739e53}</ProjectGuid>
+    <RootNamespace>ITMOCCourseLab101</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,13 +139,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="IdCard.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="student.cpp" />
+    <ClCompile Include="Dot.cpp" />
+    <ClCompile Include="ITMO.C++Course.Lab10-1.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="IdCard.h" />
-    <ClInclude Include="student.h" />
+    <ClInclude Include="Dot.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

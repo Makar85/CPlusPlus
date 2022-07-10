@@ -49,6 +49,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ITMO.C++Course.Ex9", "ITMO.
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ITMO.C++Course.Lab9-1", "ITMO.C++Course.Lab9-1\ITMO.C++Course.Lab9-1.vcxproj", "{8EF6016D-47E2-412B-8528-5FB19622D03A}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ITMO.C++Course.Lab10-1", "ITMO.C++Course.Lab10-1\ITMO.C++Course.Lab10-1.vcxproj", "{A14D0E73-664A-427E-9966-76BFD5739E53}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -241,6 +243,14 @@ Global
 		{8EF6016D-47E2-412B-8528-5FB19622D03A}.Release|x64.Build.0 = Release|x64
 		{8EF6016D-47E2-412B-8528-5FB19622D03A}.Release|x86.ActiveCfg = Release|Win32
 		{8EF6016D-47E2-412B-8528-5FB19622D03A}.Release|x86.Build.0 = Release|Win32
+		{A14D0E73-664A-427E-9966-76BFD5739E53}.Debug|x64.ActiveCfg = Debug|x64
+		{A14D0E73-664A-427E-9966-76BFD5739E53}.Debug|x64.Build.0 = Debug|x64
+		{A14D0E73-664A-427E-9966-76BFD5739E53}.Debug|x86.ActiveCfg = Debug|Win32
+		{A14D0E73-664A-427E-9966-76BFD5739E53}.Debug|x86.Build.0 = Debug|Win32
+		{A14D0E73-664A-427E-9966-76BFD5739E53}.Release|x64.ActiveCfg = Release|x64
+		{A14D0E73-664A-427E-9966-76BFD5739E53}.Release|x64.Build.0 = Release|x64
+		{A14D0E73-664A-427E-9966-76BFD5739E53}.Release|x86.ActiveCfg = Release|Win32
+		{A14D0E73-664A-427E-9966-76BFD5739E53}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

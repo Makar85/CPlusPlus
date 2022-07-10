@@ -5,6 +5,7 @@
 #include <string>
 #include <fstream>
 #include "student.h"
+#include "IdCard.h"
 
 
 using namespace std;
@@ -24,10 +25,12 @@ class ExScore
 
 
 // Конструктор Student
-Student::Student(string name, string last_name)
+Student::Student(string name, string last_name, IdCard* id)
 {
 	Student::set_name(name);
 	Student::set_last_name(last_name);
+	Student::setIdCard(id);
+
 }
 
 // Установка имени студента
@@ -87,5 +90,14 @@ void Student::save()
 	}
 	fout << endl;
 	fout.close();
+}
+
+void Student::setIdCard(IdCard* c)
+{
+	iCard = c;
+}
+IdCard Student::getIdCard()
+{
+	return *iCard;
 }
 

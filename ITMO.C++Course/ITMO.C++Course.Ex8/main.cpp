@@ -3,6 +3,7 @@
 #include <string>
 #include <windows.h>
 #include "student.h"
+#include "IdCard.h"
 
 using namespace std;
 int main()
@@ -27,8 +28,12 @@ int main()
 	cout << "Last name: ";
 	getline(cin, last_name);
 
+	//Создание объекта IdCard
+	IdCard idc(123, "Базовый");
+
+
 	// Передача параметров конструктору
-	Student* student02 = new Student(name, last_name);
+	Student* student02 = new Student(name, last_name, &idc);
 
 	// Оценки
 	int scores[5];
@@ -74,6 +79,8 @@ int main()
 	cout << "Average ball for " << student02->get_name() << " "
 		<< student02->get_last_name() << " is "
 		<< student02->get_average_score() << endl;
+	cout << "IdCard: " << student02->getIdCard().getNumber() << endl;
+	cout << "Category: " << student02->getIdCard().getCategory() << endl;
 	
 	delete student02;
 	return 0;
