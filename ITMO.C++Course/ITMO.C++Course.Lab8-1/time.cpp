@@ -73,3 +73,88 @@ Time Time::AddTime(Time t1, Time t2) const
 	};
 
 }
+
+
+
+Time operator+(const Time& t1, const Time& t2)
+{
+	int hours = t1.hours+t2.hours;
+	int minutes = t1.minutes + t2.minutes;
+	int seconds= t1.seconds + t2.seconds;
+	if (hours >= 60)
+	{
+		minutes -= 60;
+		hours++;
+	}
+	if (seconds >= 60)
+	{
+		seconds -= 60;
+		minutes++;
+	}
+	return Time(hours, minutes, seconds);	
+}
+
+Time operator+(const Time& t1, const double doubTime)
+{
+	int hours = t1.hours + static_cast<int>(doubTime);
+	int minutes = t1.minutes + static_cast<int>((doubTime*60)-60);
+	int seconds = t1.seconds + static_cast<int>(doubTime*0);
+	if (minutes >= 60)
+	{
+		minutes -= 60;
+		hours++;
+	}	
+	return Time(hours, minutes, seconds);
+}
+
+Time operator+(const double doubTime, const Time& t1)
+{
+	int hours = static_cast<int>(doubTime)+t1.hours;
+	int minutes = static_cast<int>((doubTime * 60) - 60)+ t1.minutes;
+	int seconds = t1.seconds + static_cast<int>(doubTime * 0);
+	if (minutes >= 60)
+	{
+		minutes -= 60;
+		hours++;
+	}
+	return Time(hours, minutes, seconds);
+}
+
+
+Time operator-(const Time& t1, const Time& t2)
+{
+	int hours = t1.hours - t2.hours;
+	int minutes = t1.minutes - t2.minutes;
+	int seconds = t1.seconds - t2.seconds;
+	if (hours < 0)
+	{
+		cerr << "недопустимая операция";
+		exit(0);
+	}
+
+	if (minutes < 60)
+	{
+		minutes += 60;
+		hours--;
+	}
+	
+	if (seconds < 60)
+	{
+		seconds += 60;
+		minutes--;
+	}
+	return Time(hours, minutes, seconds);
+}
+
+Time operator>(const Time& t1, const Time& t2)
+{
+	if (t1.hours > t2.hours)
+	{
+		cout << t1.hours << ":" << t1.minutes << ":" << t1.seconds << endl;
+		return t1;
+	}
+	else 
+	{
+		cout<<"false"<< endl;		
+	}	
+}
