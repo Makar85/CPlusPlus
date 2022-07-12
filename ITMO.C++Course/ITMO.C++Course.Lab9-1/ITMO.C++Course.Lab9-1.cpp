@@ -13,11 +13,12 @@ class Triangle
            a = ina;
            b = inb;
            c = inc;
+           
            if (c >= a + b or a >= b + c or b >= a + c)
                throw Triangle::NotTriangleError("NotTriangleError");
+           
        }
        
-
       double TriangleArea() const
       {
           double p = (a + b + c) / 2;
@@ -27,7 +28,11 @@ class Triangle
       class NotTriangleError {
       public:
           string nameObject;
-          NotTriangleError(string triangle) :nameObject(triangle) {}
+          NotTriangleError(string triangle) :nameObject(triangle) 
+          {
+              
+          }
+          
       };
 
 
@@ -40,9 +45,10 @@ int main()
     SetConsoleOutputCP(1251);
     cout << "Введите через пробел стороны треугольника\n";
     double a, b, c;
-    cin >> a >> b >> c;
+    cin >> a >> b >> c;  
     try {
         Triangle triangle(a, b, c);
+
         cout << "Площадь треугольника равна: " << triangle.TriangleArea() << endl;
     }
     catch (Triangle::NotTriangleError& ex)
