@@ -10,15 +10,18 @@ using namespace std;
 
 class Triangle {
 public:
-    Triangle(Dot* a, Dot* b) : a{ a }, b{ b } //композиция Dot часть класса triangle 
+    /*Triangle(Dot* a, Dot* b) : a{a}, b{b} //композиция Dot часть класса triangle 
     {
         d = Dot();   
-    }
+    }*/
     Triangle(Dot* a, Dot* b, Dot* c) : a{ a }, b{ b }, c{ c }{}//агрегация
    
     //расчет сторон треугольника:
     void Calcsize(Dot* a, Dot* b, Dot* c)
     {
+        double ab;
+        double bc;
+        double ac;
         ab = a->distanceTo(*b);
         bc = b->distanceTo(*c);
         ac = a->distanceTo(*c);
@@ -29,7 +32,7 @@ public:
     
     
   
-    double get_ab() {
+   /* double get_ab() {
         return ab;
     }
     double get_bc() {
@@ -37,17 +40,29 @@ public:
     }
     double get_ac() {
         return ac;
-    }
+    }*/
     boolean NotTriangle(double ab, double bc, double ac) {
         if (ac >= ab + bc or ab >= bc + ac or bc >= ab + ac) return true;
         return false;
     }
 
     double TrianglePer() {
+        double ab;
+        double bc;
+        double ac;
+        ab = a->distanceTo(*b);
+        bc = b->distanceTo(*c);
+        ac = a->distanceTo(*c);
         return ab + bc + ac;
     }
 
     double TriangleArea() {
+        double ab;
+        double bc;
+        double ac;
+        ab = a->distanceTo(*b);
+        bc = b->distanceTo(*c);
+        ac = a->distanceTo(*c);
         double p = TrianglePer() / 2;
         return sqrt(p * (p - ab) * (p - bc) * (p - ac));
     }
@@ -60,10 +75,7 @@ private:
     Dot* a;
     Dot* b;
     Dot* c;
-    Dot d;
-    double ab;
-    double bc;
-    double ac;
+    Dot d;  
 };
 
 
@@ -77,16 +89,16 @@ int main()
     Dot b(bx, by);
     Dot c(cx, cy);
     try {
-        Triangle triangleOrigin(&a, &b);//Вар1 композиция
+        /*Triangle triangleOrigin(&a, &b);//Вар1 композиция
         triangleOrigin.Calcsize(&a, &b, &c);
         cout << "сторона ab = " << triangleOrigin.get_ab() << "сторона bc = " << triangleOrigin.get_bc() << "сторона ac = " << triangleOrigin.get_ac() << endl;
         cout << "Периметр: " << triangleOrigin.TrianglePer() << endl;
-        cout << "Площадь: " << triangleOrigin.TriangleArea() << endl;
+        cout << "Площадь: " << triangleOrigin.TriangleArea() << endl;*/
 
         Triangle triangle(&a, &b, &c);//Вар2 агрегация
-        triangle.Calcsize(&a, &b, &c);
-        cout << "сторона ab = " << triangle.get_ab() << "сторона bc = " << triangle.get_bc() << "сторона ac = " << triangle.get_ac() << endl;
-        cout << "Периметр: " << triangle.TrianglePer() << endl;
+        //triangle.Calcsize(&a, &b, &c);
+        //cout << "сторона ab = " << triangle.get_ab() << "сторона bc = " << triangle.get_bc() << "сторона ac = " << triangle.get_ac() << endl;
+        //cout << "Периметр: " << triangle.TrianglePer() << endl;
         cout << "Площадь: " << triangle.TriangleArea() << endl;
     }
     catch (Triangle::NotTriangleError& ex)
