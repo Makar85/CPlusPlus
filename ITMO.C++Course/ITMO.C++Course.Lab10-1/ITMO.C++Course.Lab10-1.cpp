@@ -12,15 +12,12 @@ class Triangle {
 public:
     Triangle(Dot* a, Dot* b) : a{ a }, b{ b } //композиция Dot часть класса triangle 
     {
-        d = Dot();
-        ab = a->distanceTo(*b);
-        bc = b->distanceTo(d);
-        ac = a->distanceTo(d);
-        if (NotTriangle(ab, bc, ac))
-            throw Triangle::NotTriangleError("Triangle.");
-
+        d = Dot();   
     }
-    Triangle(Dot* a, Dot* b, Dot* c) : a{ a }, b{ b }, c{ c }//агрегация
+    Triangle(Dot* a, Dot* b, Dot* c) : a{ a }, b{ b }, c{ c }{}//агрегация
+   
+
+    void Calcsize(Dot* a, Dot* b, Dot* c)
     {
         ab = a->distanceTo(*b);
         bc = b->distanceTo(*c);
@@ -28,6 +25,9 @@ public:
         if (NotTriangle(ab, bc, ac))
             throw Triangle::NotTriangleError("Triangle.");
     }
+    //расчет сторон треугольника:
+    
+    
   
     double get_ab() {
         return ab;
@@ -78,11 +78,13 @@ int main()
     Dot c(cx, cy);
     try {
         Triangle triangleOrigin(&a, &b);//Вар1 композиция
+        triangleOrigin.Calcsize(&a, &b, &c);
         cout << "сторона ab = " << triangleOrigin.get_ab() << "сторона bc = " << triangleOrigin.get_bc() << "сторона ac = " << triangleOrigin.get_ac() << endl;
         cout << "Периметр: " << triangleOrigin.TrianglePer() << endl;
         cout << "Площадь: " << triangleOrigin.TriangleArea() << endl;
 
         Triangle triangle(&a, &b, &c);//Вар2 агрегация
+        triangle.Calcsize(&a, &b, &c);
         cout << "сторона ab = " << triangle.get_ab() << "сторона bc = " << triangle.get_bc() << "сторона ac = " << triangle.get_ac() << endl;
         cout << "Периметр: " << triangle.TrianglePer() << endl;
         cout << "Площадь: " << triangle.TriangleArea() << endl;
