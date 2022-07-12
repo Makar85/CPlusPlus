@@ -16,7 +16,7 @@ public:
     }
     Triangle(Dot* a, Dot* b, Dot* c) : a{ a }, b{ b }, c{ c }{}//агрегация
    
-
+    //расчет сторон треугольника:
     void Calcsize(Dot* a, Dot* b, Dot* c)
     {
         ab = a->distanceTo(*b);
@@ -25,7 +25,7 @@ public:
         if (NotTriangle(ab, bc, ac))
             throw Triangle::NotTriangleError("Triangle.");
     }
-    //расчет сторон треугольника:
+    
     
     
   
